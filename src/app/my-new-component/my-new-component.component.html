@@ -1,0 +1,46 @@
+<p>
+  This is a p in my-new-component.component.html. hello
+</p>
+
+<p>
+  The value of myVar is: {{myVar}}
+</p>
+
+<ul>
+  <li *ngFor="let arr of myArr">
+    {{arr}}
+  </li>
+</ul>
+
+<button (click) = "myEvent($event)">Make Ada disappear</button>
+
+<p *ngIf="myVar">myVar is truthy.</p>
+
+Here are four ways to do property binding.
+<img src="https://angular.io/assets/images/logos/angular/angular.svg">
+<img src="{{angularLogo}}">
+
+This is the "most common" according to Gary.
+<img [src]="angularLogo">
+<img bind-src="angularLogo">
+
+<p class="blueText">This is blue.</p>
+<p class="{{theClass}}">This is blue too.</p>
+<p [class]="theClass">This is blue the "msot common" way.</p>
+<p bind-class="theClass">This is blue a fourth way.</p>
+
+
+<p [class.blueText]="blueOrNot">
+  Whether this is blue depends on the blueOrNot var.
+  <button (click) = "blueOrNot = !blueOrNot">Change</button>
+</p>
+
+<p>
+  {{someProperty}}
+</p>
+
+<p class="animated" [@myAnimation]='state' (click)="animateMe()">I will animate</p>
+
+
+<button (click)="myGet()">Get</button>
+<button (click)="myGetAsPromise()">Get as promise</button>

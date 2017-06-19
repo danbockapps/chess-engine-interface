@@ -1,3 +1,7 @@
+// ng new components101
+// cd components101
+// ng generate component my-new-component
+
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';

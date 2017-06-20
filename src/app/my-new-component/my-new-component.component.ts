@@ -5,9 +5,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
+declare var Chess: any;
 
 @Component({
   selector: 'app-my-new-component',
@@ -24,6 +24,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   ])]
 })
 export class MyNewComponentComponent implements OnInit {
+  chessObj: any;
+
   someProperty: String = '';
   state: String = 'small';
 
@@ -46,7 +48,11 @@ export class MyNewComponentComponent implements OnInit {
     this.myArr = ['Dan', 'Lindsey', 'Hazel', ''];
   }
 
-  constructor(private dataService: DataService, private http: Http) {
+  constructor(
+    private dataService: DataService,
+    private http: Http
+  ) {
+    this.chessObj = new Chess();
 
   }
 
@@ -65,7 +71,10 @@ export class MyNewComponentComponent implements OnInit {
   }
 
   myGetAsPromise() {
-
+    console.log(this.chessObj.ascii());
+    this.chessObj.move('e4');
+    this.chessObj.move('c5');
+    console.log(this.chessObj.ascii());
   }
 
 }
